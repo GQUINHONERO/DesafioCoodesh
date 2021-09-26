@@ -15,3 +15,8 @@ Funcionalidade: Acessar o site da Coodesh e validar suas funcionalidades.
   Cenario: Navegar pela pagina e ir ao sistema de vagas ao menu superior
   Quando clicar na opcao (ver vagas)
   Entao valido a palavra "Categoria:" 
+  
+  Cenario: Um vez na tela de vagas buscar por uma empresa na tela de vagas
+  Quando clicar na opcao (ver vagas)
+  E pesquisar pela empresa "VipCommerce (Magazine Luiza)"
+  Entao valido o nome da empresa "VipCommerce (Magazine Luiza)" 

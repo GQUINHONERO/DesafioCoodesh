@@ -38,5 +38,18 @@ WebDriver driver;
           assertEquals(textoEsperado, texto);
           driver.quit();
 
+    }
+      public void submit(By elementos) {
+
+          driver.findElement(elementos).submit();
+
+      }
+
+      public void escrever(By elementos, String texto) {
+
+          driver.findElement(elementos).sendKeys(texto);
+
       }
 }
+
+
