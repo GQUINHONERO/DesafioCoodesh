@@ -45,9 +45,9 @@ WebDriver driver;
 
       }
 
-      public void escrever(By elementos, String texto) {
+      public void escrever(By elementos, String empresa) {
 
-          driver.findElement(elementos).sendKeys(texto);
+          driver.findElement(elementos).sendKeys(empresa);
 
       }
 }

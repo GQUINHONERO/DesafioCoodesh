@@ -3,6 +3,7 @@ package testes;
 
 import elementos.ElementosWeb;
 import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import metodos.Metodos;
@@ -29,7 +30,7 @@ metodos.validarBarraRolagem(el.getValidarNome(), coodesh);
 		Thread.sleep(5000);
 	   metodos.validarInformacao(el.getValidarCategoria(), categoria);
 	}
-	@Quando("pesquisar pela empresa {string}")
+	@E("pesquisar pela empresa {string}")
 	public void pesquisar_pela_empresa(String empresa) throws InterruptedException {
 		Thread.sleep(3000);
 		metodos.escrever(el.getPesquisarVaga(), empresa);
@@ -41,7 +42,20 @@ metodos.validarBarraRolagem(el.getValidarNome(), coodesh);
 		Thread.sleep(3000); 
 		metodos.validarInformacao(el.getValidarNomeEmpresa(), empresa);
 	}
+	@E("clicar em umas das vagas")
+	public void clicar_em_umas_das_vagas() throws InterruptedException  {
+		Thread.sleep(3000);
+        metodos.clicar(el.getSelecionarVaga());
 	
+    }
+
+    @Entao("validar a frase {string}")
+    public void validar_a_frase(String resumoDaVaga) throws InterruptedException {
+
+        Thread.sleep(3000);
+        metodos.validarInformacao(el.getValidarResumoVaga(), resumoDaVaga);
+
+    }
 	}
 	
 	

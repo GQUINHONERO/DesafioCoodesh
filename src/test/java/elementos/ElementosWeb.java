@@ -9,7 +9,8 @@ public class ElementosWeb {
     private By validarCategoria = By.xpath("//*[@class='h4 d-block text-dark font-weight-semi-bold mb-0']");
 	private By pesquisarVaga = By.name("search");
 	private By validarNomeEmpresa = By.xpath("//*[@class='link-muted']");
-	
+	private By selecionarVaga = By.xpath("//*[@class='h5 mb-1']");
+	private By validarResumoVaga =By.cssSelector("#content > div:nth-child(2) > div > div > div.col-lg-4 > div > div.border-0.shadow-sm.mb-3.card > header > div > h3");
     
     
     public By getVerVagas() {
@@ -42,6 +43,22 @@ public class ElementosWeb {
 
 	public void setValidarNomeEmpresa(By validarNomeEmpresa) {
 		this.validarNomeEmpresa = validarNomeEmpresa;
+	}
+
+	public By getSelecionarVaga() {
+		return selecionarVaga;
+	}
+
+	public void setSelecionarVaga(By selecionarVaga) {
+		this.selecionarVaga = selecionarVaga;
+	}
+
+	public By getValidarResumoVaga() {
+		return validarResumoVaga;
+	}
+
+	public void setValidarResumoVaga(By validarResumoVaga) {
+		this.validarResumoVaga = validarResumoVaga;
 	}
 }
 	
