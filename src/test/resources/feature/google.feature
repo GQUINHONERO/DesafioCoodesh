@@ -26,3 +26,11 @@ Funcionalidade: Acessar o site da Coodesh e validar suas funcionalidades.
   E pesquisar pela empresa "VipCommerce"
   E clicar em umas das vagas 
   Entao validar a frase "Resumo da Vaga"
+  
+  Cenario: Candidatar-se a vaga, e verificar se o modal abriu corretamente.
+  Quando clicar na opcao (ver vagas)
+  E pesquisar pela empresa "VipCommerce"
+  E clicar em umas das vagas 
+  E clicar em candidata-se
+  Entao validar a paçavra "Candidatar-se"
+  

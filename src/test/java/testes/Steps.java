@@ -56,6 +56,15 @@ metodos.validarBarraRolagem(el.getValidarNome(), coodesh);
         metodos.validarInformacao(el.getValidarResumoVaga(), resumoDaVaga);
 
     }
+    @E("clicar em candidata-se")
+    public void clicar_em_candidata_se() {
+        
+    }
+
+    @Entao("validar a paçavra {string}")
+    public void validar_a_paçavra(String string) {
+        
+    }
 	}
 	
 	

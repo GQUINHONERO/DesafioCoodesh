@@ -10,8 +10,9 @@ public class ElementosWeb {
 	private By pesquisarVaga = By.name("search");
 	private By validarNomeEmpresa = By.xpath("//*[@class='link-muted']");
 	private By selecionarVaga = By.xpath("//*[@class='h5 mb-1']");
-	private By validarResumoVaga =By.cssSelector("#content > div:nth-child(2) > div > div > div.col-lg-4 > div > div.border-0.shadow-sm.mb-3.card > header > div > h3");
-    
+	private By validarResumoVaga = By.cssSelector("#content > div:nth-child(2) > div > div > div.col-lg-4 > div > div.border-0.shadow-sm.mb-3.card > header > div > h3");
+    private By CandidatarSe = By.cssSelector("#content > div:nth-child(2) > div > div > div.col-lg-4 > div > div.border-0.shadow-sm.mb-3.card > div > div.text-center > div > button");
+    private By validarModal = By.className("body > div.fade.apply-modal.modal.show > div > div > div.bg-light.py-3.px-5.modal-header > div");
     
     public By getVerVagas() {
 		return verVagas;
@@ -59,6 +60,22 @@ public class ElementosWeb {
 
 	public void setValidarResumoVaga(By validarResumoVaga) {
 		this.validarResumoVaga = validarResumoVaga;
+	}
+
+	public By getCandidatarSe() {
+		return CandidatarSe;
+	}
+
+	public void setCandidatarSe(By candidatarSe) {
+		CandidatarSe = candidatarSe;
+	}
+
+	public By getValidarModal() {
+		return validarModal;
+	}
+
+	public void setValidarModal(By validarModal) {
+		this.validarModal = validarModal;
 	}
 }
 	

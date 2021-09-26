@@ -14,7 +14,7 @@ WebDriver driver;
 	
 	public void abrirBrowser(String site) {
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\GUSTAVO QUINHONERO\\eclipse-workspace\\DesafioCoodesh\\Drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get(site);
 		driver.manage().window().maximize();
@@ -50,6 +50,11 @@ WebDriver driver;
           driver.findElement(elementos).sendKeys(empresa);
 
       }
-}
+      
+      } 
+      
+
+      
+
 
 
