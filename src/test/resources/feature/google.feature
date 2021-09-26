@@ -12,4 +12,6 @@ Funcionalidade: Acessar o site da Coodesh e validar suas funcionalidades.
   Entao rolar a pagina ate o final e validar a frase "Coodesh"
 
   
-  
+  Cenario: Navegar pela pagina e ir ao sistema de vagas ao menu superior
+  Quando clicar na opcao (ver vagas)
+  Entao valido a palavra "Categoria:" 

@@ -14,7 +14,7 @@ WebDriver driver;
 	
 	public void abrirBrowser(String site) {
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\GUSTAVO QUINHONERO\\Downloads\\driveratt\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\GUSTAVO QUINHONERO\\eclipse-workspace\\DesafioCoodesh\\Drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get(site);
 		driver.manage().window().maximize();
@@ -27,8 +27,16 @@ WebDriver driver;
 
         String texto = driver.findElement(elementos).getText();
         assertEquals(textoEsperado, texto);
-        driver.close();
-
-    
+        driver.close();	
+	}
+      public void clicar(By elementos) {
+    driver.findElement(elementos).click();
     }
+      public void validarInformacao(By elementos, String textoEsperado) {
+
+          String texto = driver.findElement(elementos).getText();
+          assertEquals(textoEsperado, texto);
+          driver.quit();
+
+      }
 }
