@@ -1,5 +1,6 @@
 package testes;
 
+import java.io.IOException;
 
 import elementos.ElementosWeb;
 import io.cucumber.java.pt.Dado;
@@ -10,26 +11,36 @@ import metodos.Metodos;
 
 public class Steps {
 	Metodos metodos = new Metodos();
-ElementosWeb el= new ElementosWeb();
+	ElementosWeb el = new ElementosWeb();
+
 	@Dado("que esteja no site da Coodesh {string}")
 	public void que_esteja_no_site_da_coodesh(String site) {
-	    metodos.abrirBrowser(site);
+		metodos.abrirBrowser(site);
 	}
 
 	@Entao("rolar a pagina ate o final e validar a frase {string}")
-	public void rolar_a_pagina_ate_o_final_e_validar_a_frase(String coodesh) {
-metodos.validarBarraRolagem(el.getValidarNome(), coodesh);
+	public void rolar_a_pagina_ate_o_final_e_validar_a_frase(String coodesh) throws IOException {
+		metodos.validarBarraRolagem(el.getValidarNome(), coodesh);
+		metodos.screenShot("1 - Evidencia (Home Page)");
+		
+		metodos.fecharNavegador();
+
 	}
+
 	@Quando("clicar na opcao \\(ver vagas)")
-	public void clicar_na_opcao_ver_vagas() {
-	  metodos.clicar(el.getVerVagas());  
+	public void clicar_na_opcao_ver_vagas() throws InterruptedException {
+		Thread.sleep(5000);
+		metodos.clicar(el.getVerVagas());
 	}
 
 	@Entao("valido a palavra {string}")
-	public void valido_a_palavra(String categoria) throws InterruptedException {
+	public void valido_a_palavra(String categoria) throws InterruptedException, IOException {
 		Thread.sleep(5000);
-	   metodos.validarInformacao(el.getValidarCategoria(), categoria);
+		metodos.validarInformacao(el.getValidarCategoria(), categoria);
+		metodos.screenShot("2 - Evidencia (palavra Categoria");
+		metodos.fecharNavegador();
 	}
+
 	@E("pesquisar pela empresa {string}")
 	public void pesquisar_pela_empresa(String empresa) throws InterruptedException {
 		Thread.sleep(3000);
@@ -38,37 +49,41 @@ metodos.validarBarraRolagem(el.getValidarNome(), coodesh);
 	}
 
 	@Entao("valido o nome da empresa {string}")
-	public void valido_o_nome_da_empresa(String empresa) throws InterruptedException {
-		Thread.sleep(3000); 
-		metodos.validarInformacao(el.getValidarNomeEmpresa(), empresa);
-	}
-	@E("clicar em umas das vagas")
-	public void clicar_em_umas_das_vagas() throws InterruptedException  {
+	public void valido_o_nome_da_empresa(String empresa) throws InterruptedException, IOException {
 		Thread.sleep(3000);
-        metodos.clicar(el.getSelecionarVaga());
-	
-    }
-
-    @Entao("validar a frase {string}")
-    public void validar_a_frase(String resumoDaVaga) throws InterruptedException {
-
-        Thread.sleep(3000);
-        metodos.validarInformacao(el.getValidarResumoVaga(), resumoDaVaga);
-
-    }
-    @E("clicar em candidata-se")
-    public void clicar_em_candidata_se() {
-        
-    }
-
-    @Entao("validar a paçavra {string}")
-    public void validar_a_paçavra(String string) {
-        
-    }
+		metodos.validarInformacao(el.getValidarNomeEmpresa(), empresa);
+		metodos.screenShot("3 - Evidencia (nome da empresa)");
+		metodos.fecharNavegador();
 	}
-	
-	
-	
-	
-	
 
+	@E("clicar em umas das vagas")
+	public void clicar_em_umas_das_vagas() throws InterruptedException {
+		Thread.sleep(3000);
+		metodos.clicar(el.getSelecionarVaga());
+
+	}
+
+	@Entao("validar a frase {string}")
+	public void validar_a_frase(String resumoDaVaga) throws InterruptedException, IOException {
+
+		Thread.sleep(3000);
+		metodos.validarInformacao(el.getValidarResumoVaga(), resumoDaVaga);
+		metodos.screenShot("4 - Evidencia (Resumo da Vaga)");
+		metodos.fecharNavegador();
+
+	}
+
+	@E("clicar em candidata-se")
+	public void clicar_em_candidata_se() throws InterruptedException {
+		Thread.sleep(5000);
+		metodos.clicar(el.getCandidatarSe());
+	}
+
+	@Entao("validar a palavra {string}")
+	public void validar_a_palavra(String palavra) throws IOException, InterruptedException {
+		Thread.sleep(5000);
+		metodos.validarInformacao(el.getValidarModal(), palavra);
+		metodos.screenShot("5 - Evidencia (validacao Modal)");
+		metodos.fecharNavegador();
+	}
+}
