@@ -46,8 +46,9 @@ Nesse parte teremos que desenvolver um projeto para testar vários aspectos da p
 ## Execução do Projeto
 
 - Clonar Repositório.
+```bash
 git clone https://github.com/GQUINHONERO/DesafioCoodesh.git
-
+```
 - Importar projeto Maven através da IDE;
 - Mudar o padrão do texto para UTF-8;
 - Rodar o projeto na classe "Execucao" (Teste JUnit) ou através do Cucumber;
