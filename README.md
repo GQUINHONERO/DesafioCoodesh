@@ -53,6 +53,7 @@ git clone https://github.com/GQUINHONERO/DesafioCoodesh.git
 - Mudar o padrão do texto para UTF-8;
 - Rodar o projeto na classe "Execucao" (Teste JUnit) ou através do Cucumber;
 
+OBS: Antes de executar o projeto, excluir a pasta "evidencias" para que novas evidências sejam geradas.
 # Autor
 
 Gustavo Quinhonero Santos
