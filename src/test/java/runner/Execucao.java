@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		
-		features="src/test/resources/feature",
+		features="src/test/resources/Features/cenarioUnico.feature",
 		glue={"testes"},
 		tags = "@executa",
 		dryRun = false,

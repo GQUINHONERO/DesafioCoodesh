@@ -22,8 +22,6 @@ public class Steps {
 	public void rolar_a_pagina_ate_o_final_e_validar_a_frase(String coodesh) throws IOException {
 		metodos.validarBarraRolagem(el.getValidarNome(), coodesh);
 		metodos.screenShot("1 - Evidencia (Home Page)");
-		
-		metodos.fecharNavegador();
 
 	}
 
@@ -38,7 +36,7 @@ public class Steps {
 		Thread.sleep(5000);
 		metodos.validarInformacao(el.getValidarCategoria(), categoria);
 		metodos.screenShot("2 - Evidencia (palavra Categoria");
-		metodos.fecharNavegador();
+
 	}
 
 	@E("pesquisar pela empresa {string}")
@@ -53,7 +51,7 @@ public class Steps {
 		Thread.sleep(3000);
 		metodos.validarInformacao(el.getValidarNomeEmpresa(), empresa);
 		metodos.screenShot("3 - Evidencia (nome da empresa)");
-		metodos.fecharNavegador();
+
 	}
 
 	@E("clicar em umas das vagas")
@@ -69,7 +67,6 @@ public class Steps {
 		Thread.sleep(3000);
 		metodos.validarInformacao(el.getValidarResumoVaga(), resumoDaVaga);
 		metodos.screenShot("4 - Evidencia (Resumo da Vaga)");
-		metodos.fecharNavegador();
 
 	}
 
